@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<h2>New Style Pretty Urls</h2>
+		<pre>
+$gh = KMHttp::at('http://github.com/api/v2/json');
+$gh_data = $gh->get('/user/show/kaylarose');
+echo ($gh_data) ? $gh_data : $gh->last_status();
+		</pre>
+		<h2>Old Style Ugly Urls</h2>
+		<h5>w. Pretty Params</h5>
+		<pre>
+$yh = KMHttp::at('http://api.local.yahoo.com/MapsService/V1');
+$params = array(
+	'appid' 	=> 'XXXXXXXXX', //This is a real API key!?
+	'street'	=> '701 First Street',
+	'city'		=> 'Sunnyvale',
+	'state'		=> 'CA'
+);
+$y_data = $yh->get('/geocode', $params);
+		</pre>
+		<h5>via Direct URL</h5>
+		<pre>
+$yh = KMHttp::at('http://api.local.yahoo.com/MapsService/V1');
+$y_data2 = $yh->get('/geocode?appid=XXXXXXXXX&street=701+First+Street&city=Sunnyvale&state=CA');
+		</pre>
+	</body>
+</html>
