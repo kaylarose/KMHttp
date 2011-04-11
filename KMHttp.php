@@ -9,7 +9,7 @@
  * B. Or use Traditional /user?id=1 style urls by passing the base route
  * and a params hash as the optional second argument
  *
- * POSTS and PUTS pass info as a hash via the optional second argument
+ * POSTs and PUTs pass info as a hash via the optional second argument
  *
  * Dependencies: PHP 5.3+, curl_lib
  * @author Kayla Rose Martin
@@ -193,7 +193,7 @@ class KMHttp {
 		if(!function_exists('curl_init'))
 		{
 			echo 'Your environment does not satisfy this libraries requirements. Missing dependency: cURL PHP Library';
-			die(173);
+			die(187);
 		}
 		return TRUE;
 	}
